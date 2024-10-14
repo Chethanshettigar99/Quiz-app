@@ -11,6 +11,7 @@ Performance Visualization: Integrates Chart.js to visualize user performance, of
 Resource Links: Suggests additional learning resources based on quiz performance to aid user improvement.
 
 Efficient Backend Management: Uses Django’s admin and ORM for efficient quiz data management and answer validation.
+
 ---------------------------------------------------------------------------------------------------------------------------------------
 
 Frontend: Built using Django’s HTML templates to ensure a user-friendly interface with components for quiz display, real-time feedback, and performance charts.
