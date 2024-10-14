@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <link rel="stylesheet" href="{% static 'css/quiz.css' %}">
+    <script src="{% static 'js/quiz.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <a href="/" class="button">Go Back</a>
+            <h1>ATTEMPT THE QUIZ</h1>
+        </header>
+
+        <section>
+            
+            <form name="quizForm" onsubmit="return submitAnswers(answers = [{% for q in questions %}'{{ q.answer }}',{% endfor %}])">
+                {% for q in questions %}
+                    <h3>{{ q.id }}. {{ q.question }}</h3>
+                    {% if q.type == 'MCQ' %}
+                        <input type="radio" name="q{{ q.id }}" value="a" id="q{{ q.id }}a"> a. {{ q.option1 }}<br><br>
+                        <input type="radio" name="q{{ q.id }}" value="b" id="q{{ q.id }}b"> b. {{ q.option2 }}<br><br>
+                        <input type="radio" name="q{{ q.id }}" value="c" id="q{{ q.id }}c"> c. {{ q.option3 }}<br><br>
+                        <input type="radio" name="q{{ q.id }}" value="d" id="q{{ q.id }}d"> d. {{ q.option4 }}<br><br>
+                    {% elif q.type == 'DESC' %}
+                        <textarea name="q{{ q.id }}" id="q{{ q.id }}" rows="4" cols="50" placeholder="Write your answer here..."></textarea><br><br>
+                    {% endif %}
+                {% endfor %}
+                <br><br>
+                <input type="submit" value="Submit Answer">
+            </form>
+            <div id="results"></div>
+            <canvas id="performanceChart" width="400" height="200"></canvas>
+            <div id="links"></div>
+            <a href="/questions" class="button">Reset</a>
+        </section>
+    </div>
+</body>
+</html>

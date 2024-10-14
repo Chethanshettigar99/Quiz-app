@@ -1,0 +1,75 @@
+/* quiz.css */
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #a8edea, #fed6e3); /* Adjust colors as per your preference */
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Ensures the background covers the entire viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container styles */
+#container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: glow 1.5s infinite alternate;
+}
+
+/* Glowing border animation */
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(0, 123, 255, 0.5), 0 0 30px rgba(0, 123, 255, 0.5), 0 0 40px rgba(0, 123, 255, 0.5);
+    }
+}
+
+h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Admin Login styles */
+.admin-login {
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #333;
+    transition: color 0.3s ease, border-color 0.3s ease;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+   
+}
+
+
+
+.admin-login:hover {
+    color: #007bff;
+    border-color: #007bff;
+    
+}
+
